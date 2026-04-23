@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Haven | Dark Reviews</title>
+  <style>
+    /* ===== RESET ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Georgia", serif;
+      background-color: #121212;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background-color: #1c1c1c;
+      color: #f5f5f5;
+      padding: 20px 50px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #333;
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      letter-spacing: 1px;
+      color: #f1c40f;
+    }
+
+    nav a {
+      color: #f5f5f5;
+      margin-left: 25px;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #f1c40f;
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      background: linear-gradient(to right, #1e1e1e, #2d2d2d);
+      text-align: center;
+      padding: 80px 20px;
+      border-bottom: 1px solid #2f2f2f;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      color: #f5f5f5;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #ccc;
+    }
+
+    /* ===== BOOK SECTION ===== */
+    .books {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 50px;
+    }
+
+    .book {
+      background-color: #1b1b1b;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .book:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+    }
+
+    .book img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+    }
+
+    .book-content {
+      padding: 15px;
+    }
+
+    .book-content h3 {
+      color: #f1c40f;
+      margin-bottom: 8px;
+    }
+
+    .book-content p {
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    /* ===== REVIEW FORM ===== */
+    .review-form {
+      background-color: #1c1c1c;
+      margin: 50px auto;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 700px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.5);
+    }
+
+    .review-form h2 {
+      text-align: center;
+      color: #f1c40f;
+      margin-bottom: 20px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-weight: bold;
+      color: #f5f5f5;
+    }
+
+    input, textarea, select {
+      background-color: #2a2a2a;
+      color: #eee;
+      border: 1px solid #444;
+      border-radius: 5px;
+      padding: 10px;
+      font-family: inherit;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: #f1c40f;
+      outline: none;
+    }
+
+    button {
+      background-color: #f1c40f;
+      color: #1c1c1c;
+      border: none;
+      padding: 10px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #d4ac0d;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: #1b1b1b;
+      color: #888;
+      text-align: center;
+      padding: 20px 0;
+      border-top: 1px solid #2f2f2f;
+    }
+
+    footer p span {
+      color: #f1c40f;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .books {
+        padding: 20px;
+      }
+
+      .review-form {
+        margin: 20px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>📚 Book Haven</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Reviews</a>
+      <a href="#">Submit</a>
+      <a href="#">About</a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <h2>Read. Review. Repeat.</h2>
+    <p>Welcome to the dark side of literature — honest reviews & passionate readers.</p>
+  </section>
+
+  <!-- BOOKS GRID -->
+  <section class="books">
+    <div class="book">
+      <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f" alt="Book Cover">
+      <div class="book-content">
+        <h3>The Great Gatsby</h3>
+        <p>“A poetic dive into love and ambition — hauntingly beautiful.” ★★★★☆</p>
+      </div>
+    </div>
+
+    <div class="book">
+      <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c" alt="Book Cover">
+      <div class="book-content">
+        <h3>1984</h3>
+        <p>“A chilling masterpiece of surveillance and control.” ★★★★★</p>
+      </div>
+    </div>
+
+    <div class="book">
+      <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794" alt="Book Cover">
+      <div class="book-content">
+        <h3>To Kill a Mockingbird</h3>
+        <p>“Heartfelt and timeless — a fight for justice through innocence.” ★★★★★</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEW FORM -->
+  <section class="review-form">
+    <h2>Submit Your Review</h2>
+    <form>
+      <label for="book-title">Book Title:</label>
+      <input type="text" id="book-title" name="book-title" placeholder="Enter the book title" required>
+
+      <label for="rating">Rating:</label>
+      <select id="rating" name="rating" required>
+        <option value="">Select rating</option>
+        <option>★★★★★</option>
+        <option>★★★★☆</option>
+        <option>★★★☆☆</option>
+        <option>★★☆☆☆</option>
+        <option>★☆☆☆☆</option>
+      </select>
+
+      <label for="review">Your Review:</label>
+      <textarea id="review" name="review" rows="4" placeholder="Write your review..." required></textarea>
+
+      <button type="submit">Submit Review</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 <span>Book Haven</span> — Crafted with 📚 & pure HTML/CSS.</p>
+  </footer>
+
+</body>
+</html>
